@@ -1,10 +1,11 @@
 import 'regenerator-runtime/runtime';
+import { Map } from 'immutable';
 import Express from 'express';
 import GraphQLHTTP from 'express-graphql';
 import Parse from 'parse/node';
-import { UserService } from 'micro-business-parse-server-common';
+import { ParseWrapperService, UserService } from 'micro-business-parse-server-common';
 import { getRootSchema } from 'trolley-smart-backend-graphql';
-import { StapleTemplateItemService } from 'trolley-smart-parse-server-common';
+import { ShoppingListService, StapleTemplateItemService } from 'trolley-smart-parse-server-common';
 
 const applicationId = '50a47f7f-411a-4abb-8c50-3daabac420eb';
 const javascriptKey = 'w2GaCmTc2U7QwjbR3NGA1cg0UTjvbSYE';
@@ -21,6 +22,19 @@ expressServer.use('/graphql', GraphQLHTTP({
   graphiql: true,
 }));
 
+const addDefaultShoppingList = async user =>
+  new ShoppingListService().create(Map({ name: 'My List', user, status: 'A' }), ParseWrapperService.createACL(user));
+
+const onAfterSaveUser = async (request) => {
+  if (request.object.createdAt !== request.object.updatedAt) {
+    return;
+  }
+
+  const user = await UserService.getUserById(request.object.objectId);
+
+  await Promise.all([new StapleTemplateItemService().cloneStapleTemplateItems(user), addDefaultShoppingList(user)]);
+};
+
 expressServer.use('/afterSaveUser', (req, res) => {
   let body = '';
 
@@ -29,19 +43,12 @@ expressServer.use('/afterSaveUser', (req, res) => {
   });
 
   req.on('end', () => {
-    const request = JSON.parse(body);
-
-    if (request.object.createdAt === request.object.updatedAt) {
-      UserService.getUserById(request.object.objectId).then(user => new StapleTemplateItemService().cloneStapleTemplateItems(user)).then(() => {
-        res.writeHead(200);
-        res.end();
-      }).catch((error) => {
-        throw new Error(error);
-      });
-    } else {
+    onAfterSaveUser(JSON.parse(body)).then(() => {
       res.writeHead(200);
       res.end();
-    }
+    }).catch((error) => {
+      throw new Error(error);
+    });
   });
 });
 
