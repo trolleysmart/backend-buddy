@@ -1,6 +1,6 @@
 {
   "name": "trolley-smart-backend-buddy",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "TrolleySmart Backend Buddy",
   "scripts": {
     "build": "babel src --out-dir .",
@@ -20,7 +20,7 @@
     "parse": "^1.10.0",
     "regenerator-runtime": "^0.11.0",
     "trolley-smart-backend": "^1.0.0-alpha.19",
-    "trolley-smart-backend-graphql": "^1.0.0-alpha.7",
+    "trolley-smart-backend-graphql": "^1.0.0-alpha.8",
     "trolley-smart-backend-long-running-jobs": "^1.0.0-alpha.17",
     "trolley-smart-parse-server-common": "^1.0.0-alpha.21"
   },
