@@ -3,9 +3,8 @@
   "version": "1.0.0-alpha.3",
   "description": "TrolleySmart Backend Buddy",
   "scripts": {
-    "build": "babel src --out-dir .",
-    "lint": "eslint --ext .jsx --ext .js src",
-    "fixlint": "eslint --fix --ext .jsx --ext .js src",
+    "lint": "eslint --ext .jsx --ext .js .",
+    "fixlint": "eslint --fix --ext .jsx --ext .js .",
     "flow": "flow",
     "lint:staged": "lint-staged"
   },
