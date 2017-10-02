@@ -53,7 +53,5 @@ fastlane/Preview.html
 fastlane/screenshots
 
 .exponent
-
-/logs
 package-lock.json
-newrelic_agent.log
+yarn.lock
