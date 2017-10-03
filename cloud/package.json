@@ -1,6 +1,6 @@
 {
   "name": "trolley-smart-backend-buddy",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "description": "TrolleySmart Backend Buddy",
   "scripts": {
     "lint": "eslint --ext .jsx --ext .js .",
@@ -18,8 +18,8 @@
     "micro-business-parse-server-common": "^1.0.2-alpha.29",
     "parse": "^1.10.0",
     "regenerator-runtime": "^0.11.0",
-    "trolley-smart-backend": "^1.0.0-alpha.19",
-    "trolley-smart-backend-graphql": "^1.0.0-alpha.8",
+    "trolley-smart-backend": "^1.0.0-alpha.21",
+    "trolley-smart-backend-graphql": "^1.0.0-alpha.10",
     "trolley-smart-backend-long-running-jobs": "^1.0.0-alpha.17",
     "trolley-smart-parse-server-common": "^1.0.0-alpha.21"
   },
@@ -36,7 +36,7 @@
     "eslint-plugin-react": "^7.4.0",
     "flow-bin": "^0.56.0",
     "lint-staged": "^4.2.3",
-    "prettier": "^1.7.3"
+    "prettier": "^1.7.4"
   },
   "pre-commit": "lint:staged",
   "repository": {
