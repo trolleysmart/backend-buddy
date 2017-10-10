@@ -1,12 +1,11 @@
 require('regenerator-runtime/runtime');
 
-const { Map } = require('immutable');
 const Express = require('express');
 const GraphQLHTTP = require('express-graphql');
 const Parse = require('parse/node');
 const { getRootSchema } = require('trolley-smart-backend-graphql');
-const { ParseWrapperService, UserService } = require('micro-business-parse-server-common');
-const { ShoppingListService, StapleTemplateItemService } = require('trolley-smart-parse-server-common');
+const { UserService } = require('micro-business-parse-server-common');
+const { StapleTemplateItemService } = require('trolley-smart-parse-server-common');
 
 const applicationId = '50a47f7f-411a-4abb-8c50-3daabac420eb';
 const javascriptKey = 'w2GaCmTc2U7QwjbR3NGA1cg0UTjvbSYE';
@@ -38,9 +37,7 @@ expressServer.use('/afterSaveUser', (req, res) => {
     }
 
     UserService.getUserById(request.object.objectId)
-      .then(user => Promise.all(
-        [new StapleTemplateItemService().cloneStapleTemplateItems(user),
-          new ShoppingListService().create(Map({ name: 'My List', user, status: 'A' }), ParseWrapperService.createACL(user))]))
+      .then(user => new StapleTemplateItemService().cloneStapleTemplateItems(user))
       .then(() => {
         res.writeHead(200);
         res.end();
