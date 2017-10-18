@@ -9,8 +9,9 @@ const { StapleTemplateItemService } = require('trolley-smart-parse-server-common
 
 const applicationId = '50a47f7f-411a-4abb-8c50-3daabac420eb';
 const javascriptKey = 'w2GaCmTc2U7QwjbR3NGA1cg0UTjvbSYE';
+const masterKey = 'p35twdsjRGwe7vo2S1L654i2r5dcAT0C';
 
-Parse.initialize(applicationId, javascriptKey || 'unused');
+Parse.initialize(applicationId, javascriptKey || 'unused', masterKey);
 Parse.serverURL = 'https://parse.buddy.com/parse';
 
 const expressServer = Express();
