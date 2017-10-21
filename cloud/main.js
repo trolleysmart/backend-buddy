@@ -3,9 +3,17 @@ require('regenerator-runtime/runtime');
 const Express = require('express');
 const GraphQLHTTP = require('express-graphql');
 const Parse = require('parse/node');
-const { getRootSchema } = require('trolley-smart-backend-graphql');
 const { UserService } = require('micro-business-parse-server-common');
 const { StapleTemplateItemService } = require('trolley-smart-parse-server-common');
+const {
+  createConfigLoader,
+  createUserLoaderBySessionToken,
+  getRootSchema,
+  storeLoaderById,
+  storeLoaderByKey,
+  tagLoaderByKey,
+  tagLoaderById,
+} = require('trolley-smart-backend-graphql');
 
 const applicationId = '50a47f7f-411a-4abb-8c50-3daabac420eb';
 const javascriptKey = 'w2GaCmTc2U7QwjbR3NGA1cg0UTjvbSYE';
@@ -17,7 +25,26 @@ Parse.serverURL = 'https://parse.buddy.com/parse';
 const expressServer = Express();
 const schema = getRootSchema();
 
-expressServer.use('/graphql', GraphQLHTTP({ schema, graphiql: true }));
+expressServer.use('/graphql', (request, response) => {
+  const configLoader = createConfigLoader();
+  const userLoaderBySessionToken = createUserLoaderBySessionToken();
+
+  return GraphQLHTTP({
+    schema,
+    graphiql: true,
+    context: {
+      request,
+      dataLoaders: Map({
+        configLoader,
+        userLoaderBySessionToken,
+        storeLoaderById,
+        storeLoaderByKey,
+        tagLoaderByKey,
+        tagLoaderById,
+      }),
+    },
+  })(request, response);
+});
 
 expressServer.use('/afterSaveUser', (req, res) => {
   let body = '';
