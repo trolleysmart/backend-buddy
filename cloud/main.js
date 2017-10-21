@@ -1,5 +1,6 @@
 require('regenerator-runtime/runtime');
 
+const { Map } = require('immutable');
 const Express = require('express');
 const GraphQLHTTP = require('express-graphql');
 const Parse = require('parse/node');
