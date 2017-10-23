@@ -1,6 +1,5 @@
 require('regenerator-runtime/runtime');
 
-const { Map } = require('immutable');
 const Express = require('express');
 const GraphQLHTTP = require('express-graphql');
 const Parse = require('parse/node');
@@ -9,6 +8,7 @@ const { StapleTemplateItemService } = require('trolley-smart-parse-server-common
 const {
   createConfigLoader,
   createUserLoaderBySessionToken,
+  createUserDefaultShoppingListLoader,
   getRootSchema,
   storeLoaderById,
   storeLoaderByKey,
@@ -29,20 +29,23 @@ const schema = getRootSchema();
 expressServer.use('/graphql', (request, response) => {
   const configLoader = createConfigLoader();
   const userLoaderBySessionToken = createUserLoaderBySessionToken();
+  const userDefaultShoppingListLoader = createUserDefaultShoppingListLoader();
 
   return GraphQLHTTP({
     schema,
     graphiql: true,
     context: {
       request,
-      dataLoaders: Map({
+      sessionToken: request.headers.authorization,
+      dataLoaders: {
         configLoader,
         userLoaderBySessionToken,
+        userDefaultShoppingListLoader,
         storeLoaderById,
         storeLoaderByKey,
         tagLoaderByKey,
         tagLoaderById,
-      }),
+      },
     },
   })(request, response);
 });
