@@ -15,13 +15,13 @@
     "express-graphql": "^0.6.11",
     "graphql": "^0.11.7",
     "immutable": "^4.0.0-rc.9",
-    "micro-business-parse-server-common": "^1.0.2-alpha.33",
+    "micro-business-parse-server-common": "^1.0.2-alpha.34",
     "parse": "^1.10.1",
     "regenerator-runtime": "^0.11.0",
-    "trolley-smart-backend": "^1.0.0-alpha.46",
+    "trolley-smart-backend": "^1.0.0-alpha.47",
     "trolley-smart-backend-graphql": "^1.0.0-alpha.50",
-    "trolley-smart-backend-long-running-jobs": "^1.0.0-alpha.33",
-    "trolley-smart-parse-server-common": "^1.0.0-alpha.31"
+    "trolley-smart-backend-long-running-jobs": "^1.0.0-alpha.34",
+    "trolley-smart-parse-server-common": "^1.0.0-alpha.32"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
