@@ -18,10 +18,10 @@
     "micro-business-parse-server-common": "^1.0.2-alpha.34",
     "parse": "^1.10.1",
     "regenerator-runtime": "^0.11.0",
-    "trolley-smart-backend": "^1.0.0-alpha.47",
-    "trolley-smart-backend-graphql": "^1.0.0-alpha.50",
-    "trolley-smart-backend-long-running-jobs": "^1.0.0-alpha.34",
-    "trolley-smart-parse-server-common": "^1.0.0-alpha.32"
+    "trolley-smart-backend": "^1.0.0-alpha.49",
+    "trolley-smart-backend-graphql": "^1.0.0-alpha.51",
+    "trolley-smart-backend-long-running-jobs": "^1.0.0-alpha.36",
+    "trolley-smart-parse-server-common": "^1.0.0-alpha.34"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -29,7 +29,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-0": "^6.24.1",
-    "eslint": "^4.9.0",
+    "eslint": "^4.10.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "6.0.2",
