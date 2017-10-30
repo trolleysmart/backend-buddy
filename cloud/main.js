@@ -78,4 +78,14 @@ expressServer.use('/afterSaveUser', (req, res) => {
   });
 });
 
+expressServer.use('/afterSaveStore', () => {
+    storeLoaderByKey.clearAll();
+    storeLoaderById.clearAll();
+});
+
+expressServer.use('/afterSaveTag', () => {
+    tagLoaderByKey.clearAll();
+    tagLoaderById.clearAll();
+});
+
 expressServer.listen(3000);
