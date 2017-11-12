@@ -2,6 +2,7 @@ require('regenerator-runtime/runtime');
 
 const Express = require('express');
 const GraphQLHTTP = require('express-graphql');
+const cors = require('cors')
 const Parse = require('parse/node');
 const { UserService } = require('micro-business-parse-server-common');
 const { StapleTemplateItemService } = require('trolley-smart-parse-server-common');
@@ -26,6 +27,7 @@ Parse.serverURL = 'https://parse.buddy.com/parse';
 const expressServer = Express();
 const schema = getRootSchema();
 
+expressServer.use(cors());
 expressServer.use('/graphql', (request, response) => {
   const configLoader = createConfigLoader();
   const userLoaderBySessionToken = createUserLoaderBySessionToken();
