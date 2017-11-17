@@ -2,7 +2,7 @@ require('regenerator-runtime/runtime');
 
 const Express = require('express');
 const GraphQLHTTP = require('express-graphql');
-const cors = require('cors')
+const cors = require('cors');
 const Parse = require('parse/node');
 const { UserService } = require('micro-business-parse-server-common');
 const { StapleTemplateItemService } = require('trolley-smart-parse-server-common');
@@ -81,13 +81,13 @@ expressServer.use('/afterSaveUser', (req, res) => {
 });
 
 expressServer.use('/afterSaveStore', () => {
-    storeLoaderByKey.clearAll();
-    storeLoaderById.clearAll();
+  storeLoaderByKey.clearAll();
+  storeLoaderById.clearAll();
 });
 
 expressServer.use('/afterSaveTag', () => {
-    tagLoaderByKey.clearAll();
-    tagLoaderById.clearAll();
+  tagLoaderByKey.clearAll();
+  tagLoaderById.clearAll();
 });
 
 expressServer.listen(3000);
