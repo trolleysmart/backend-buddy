@@ -1,6 +1,6 @@
 {
   "name": "trolley-smart-backend-buddy",
-  "version": "1.0.0-alpha.15",
+  "version": "1.0.0-alpha.16",
   "description": "TrolleySmart Backend Buddy",
   "scripts": {
     "lint": "eslint --ext .jsx --ext .js .",
@@ -19,8 +19,8 @@
     "micro-business-parse-server-common": "^1.0.2-alpha.38",
     "parse": "^1.10.2",
     "regenerator-runtime": "^0.11.0",
-    "trolley-smart-backend-graphql": "^1.0.0-alpha.59",
-    "trolley-smart-parse-server-common": "^1.0.0-alpha.43"
+    "trolley-smart-backend-graphql": "^1.0.0-alpha.60",
+    "trolley-smart-parse-server-common": "^1.0.0-alpha.45"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -32,7 +32,7 @@
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "6.0.2",
-    "eslint-plugin-react": "^7.4.0",
+    "eslint-plugin-react": "^7.5.1",
     "flow-bin": "^0.59.0",
     "husky": "^0.14.3",
     "lint-staged": "^5.0.0",
