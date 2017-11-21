@@ -19,7 +19,7 @@
     "micro-business-parse-server-common": "^1.0.2-alpha.38",
     "parse": "^1.10.2",
     "regenerator-runtime": "^0.11.0",
-    "trolley-smart-backend-graphql": "^1.0.0-alpha.60",
+    "trolley-smart-backend-graphql": "^1.0.0-alpha.61",
     "trolley-smart-parse-server-common": "^1.0.0-alpha.45"
   },
   "devDependencies": {
