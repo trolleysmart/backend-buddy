@@ -19,8 +19,8 @@
     "micro-business-parse-server-common": "^1.0.2-alpha.38",
     "parse": "^1.10.2",
     "regenerator-runtime": "^0.11.0",
-    "trolley-smart-backend-graphql": "^1.0.0-alpha.61",
-    "trolley-smart-parse-server-common": "^1.0.0-alpha.45"
+    "trolley-smart-backend-graphql": "^1.0.0-alpha.63",
+    "trolley-smart-parse-server-common": "^1.0.0-alpha.49"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
