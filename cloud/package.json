@@ -1,6 +1,6 @@
 {
   "name": "trolley-smart-backend-buddy",
-  "version": "1.0.0-alpha.17",
+  "version": "1.0.0-alpha.18",
   "description": "TrolleySmart Backend Buddy",
   "scripts": {
     "lint": "eslint --ext .jsx --ext .js .",
@@ -17,10 +17,10 @@
     "graphql": "^0.11.7",
     "immutable": "^4.0.0-rc.9",
     "micro-business-parse-server-common": "^1.0.2-alpha.39",
-    "parse": "^1.10.2",
+    "parse": "^1.11.0",
     "regenerator-runtime": "^0.11.0",
-    "trolley-smart-backend-graphql": "^1.0.0-alpha.65",
-    "trolley-smart-parse-server-common": "^1.0.0-alpha.50"
+    "trolley-smart-backend-graphql": "^1.0.0-alpha.66",
+    "trolley-smart-parse-server-common": "^1.0.0-alpha.51"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
