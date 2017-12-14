@@ -6,9 +6,8 @@ const cors = require('cors');
 const Parse = require('parse/node');
 const { UserService } = require('micro-business-parse-server-common');
 const { StapleTemplateItemService } = require('trolley-smart-parse-server-common');
+const { createConfigLoader, createUserLoaderBySessionToken } = require('micro-business-parse-server-common');
 const {
-  createConfigLoader,
-  createUserLoaderBySessionToken,
   createUserDefaultShoppingListLoader,
   getRootSchema,
   storeLoaderById,
