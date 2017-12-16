@@ -14,12 +14,12 @@
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "express-graphql": "^0.6.11",
-    "graphql": "^0.12.0",
+    "graphql": "0.11.7",
     "immutable": "^4.0.0-rc.9",
     "micro-business-parse-server-common": "^1.1.5",
     "parse": "^1.11.0",
     "regenerator-runtime": "^0.11.1",
-    "trolley-smart-backend-graphql": "^1.1.7",
+    "trolley-smart-backend-graphql": "^1.1.8",
     "trolley-smart-parse-server-common": "^1.1.4"
   },
   "devDependencies": {
