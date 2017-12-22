@@ -4,9 +4,9 @@ const Express = require('express');
 const GraphQLHTTP = require('express-graphql');
 const cors = require('cors');
 const Parse = require('parse/node');
-const { UserService } = require('micro-business-parse-server-common');
-const { StapleTemplateItemService } = require('trolley-smart-parse-server-common');
-const { createConfigLoader, createUserLoaderBySessionToken } = require('micro-business-parse-server-common');
+const { UserService } = require('@microbusiness/parse-server-common');
+const { createConfigLoader, createUserLoaderBySessionToken } = require('@microbusiness/parse-server-common');
+const { StapleTemplateItemService } = require('@trolleysmart/parse-server-common');
 const {
   createUserDefaultShoppingListLoader,
   getRootSchema,
@@ -14,7 +14,7 @@ const {
   storeLoaderByKey,
   tagLoaderByKey,
   tagLoaderById,
-} = require('trolley-smart-backend-graphql');
+} = require('@trolleysmart/backend-graphql');
 
 const applicationId = '50a47f7f-411a-4abb-8c50-3daabac420eb';
 const javascriptKey = 'w2GaCmTc2U7QwjbR3NGA1cg0UTjvbSYE';
